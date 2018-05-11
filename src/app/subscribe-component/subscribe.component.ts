@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'subscribe-me',
   templateUrl: 'subscribe.component.html',
-  styleUrls: ['./subscribe.component.scss']
+  styleUrls: ['./subscribe.component.scss'],
+  encapsulation: ViewEncapsulation.Native
 })
 
 export class SubscribeComponent implements OnInit {
@@ -13,7 +14,6 @@ export class SubscribeComponent implements OnInit {
   ngOnInit() { }
 
   ngOnSubmit(form: any) {
-    console.log(form.valid);
     if (form.valid) {
       this.registeredUser = form.value.email;
     }

@@ -7,6 +7,7 @@ import { SubscribeComponent } from './subscribe-component/subscribe.component';
 
 @NgModule({
   declarations: [
+    AppComponent,
     SubscribeComponent
   ],
   imports: [
