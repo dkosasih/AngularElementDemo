@@ -7,7 +7,6 @@ import { SubscribeComponent } from './subscribe-component/subscribe.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
     SubscribeComponent
   ],
   imports: [
@@ -15,8 +14,15 @@ import { SubscribeComponent } from './subscribe-component/subscribe.component';
     FormsModule
   ],
   entryComponents: [SubscribeComponent],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: []
 })
 export class AppModule {
+  constructor(public injector: Injector) { }
+
+  ngDoBootstrap() {
+    const renderedEl = createCustomElement(SubscribeComponent, { injector: this.injector });
+
+    customElements.define('subscribe-me', renderedEl);
+
+  }
 }
