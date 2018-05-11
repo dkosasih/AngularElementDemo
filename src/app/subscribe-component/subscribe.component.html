@@ -1,0 +1,20 @@
+<div class="card-custom">
+  <div class="row">
+    <div class=col-md-12>
+      <h2>Subscribe Me!</h2>
+    </div>
+  </div>
+  <div class="row">
+    <form #form="ngForm" (ngSubmit)="ngOnSubmit(form)">
+      <div class="col-md-8">
+        <input *ngIf="!registeredUser; else email" class="form-control" name="email" type="text" required ngModel/>
+        <ng-template #email>
+          <label>Thanks {{registeredUser}}!</label>
+        </ng-template>
+      </div>
+      <div class="col-md-4">
+        <input class="btn btn-primary" type="submit" value="Subscribe!">
+      </div>
+    </form>
+  </div>
+</div>
