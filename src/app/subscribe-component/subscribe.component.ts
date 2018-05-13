@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { AbcService } from '../some-service/return-abc.service';
 
 @Component({
   selector: 'subscribe-me',
@@ -11,10 +12,13 @@ export class SubscribeComponent implements OnInit {
 
   registeredUser: string;
 
+  constructor(public abc: AbcService){}
+
   ngOnInit() { }
 
   ngOnSubmit(form: any) {
     if (form.valid) {
+      console.log(this.abc.print());
       this.registeredUser = form.value.email;
     }
 
