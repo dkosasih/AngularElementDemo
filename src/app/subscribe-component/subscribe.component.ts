@@ -12,13 +12,12 @@ export class SubscribeComponent implements OnInit {
 
   registeredUser: string;
 
-  constructor(public abc: AbcService){}
+  constructor(public abc: AbcService) { }
 
   ngOnInit() { }
 
   ngOnSubmit(form: any) {
     if (form.valid) {
-      console.log(this.abc.print());
       this.registeredUser = form.value.email;
     }
 
